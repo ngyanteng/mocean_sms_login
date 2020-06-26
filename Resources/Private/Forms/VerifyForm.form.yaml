@@ -1,0 +1,27 @@
+identifier: VerifyForm
+label: 'MoceanSMS verify code form'
+type: Form
+prototypeName: verifyForm
+    
+renderables:
+  -
+    identifier: page-1
+    type: Page
+    renderables:
+      -
+        defaultValue: ''
+        identifier: pin
+        label: Pin
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 4-digit pin
+        validators:
+          -
+            identifier: NotEmpty
+          -  
+            identifier: VerifyCode
+            properties:
+              options:
+                value: '{pin}'
+

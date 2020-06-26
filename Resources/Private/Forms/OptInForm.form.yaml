@@ -1,0 +1,60 @@
+identifier: OptInForm
+label: 'MoceanSMS opt in form'
+type: Form
+prototypeName: optinform
+
+finishers:
+  -
+    options:
+      message: 'You have successfully opted-in.'
+      enabledValue: '{checkbox-1}'
+    identifier: SaveOptIn
+    
+renderables:
+  -
+    identifier: page-1
+    type: Page
+    renderables:
+      -
+        defaultValue: false
+        identifier: checkbox-1
+        label: Enable
+        type: Checkbox
+        validators:
+          -  
+            identifier: VerifyEnabled
+            properties:
+              options:
+                value: '{checkbox-1}'
+    renderingOptions:
+      nextButtonLabel: 'Submit'
+  -
+    identifier: page-2
+    type: Page
+    variants:
+      -
+        identifier: variant-1
+        condition: 'formValues["checkbox-1"] == 0'
+        renderingOptions:
+          enabled: false
+    renderables:
+      -
+        defaultValue: ''
+        identifier: pin
+        label: Pin
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 4-digit pin
+        validators:
+          -
+            identifier: NotEmpty
+          -  
+            identifier: VerifyCode
+            properties:
+              options:
+                value: '{pin}'
+    renderingOptions:
+      previousButtonLabel: 'Back'
+      nextButtonLabel: 'Verify'
+

@@ -1,0 +1,25 @@
+{
+    "name": "moceanapi/mocean-sms-login",
+    "authors": [
+        {
+           "name": "Mocean API",
+           "role": "Developer"
+        }
+    ],
+    "type": "typo3-cms-extension",
+    "description": "2FA login for frontend users using MoceanAPI",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+           "Mocean\\MoceanSmsLogin\\": "Classes/"
+        }
+    },
+    "require": {
+        "typo3/cms-core": ">=10.4 <11.0.0"
+    },
+	"extra": {
+        "typo3/cms": {
+            "extension-key": "mocean_sms_login"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+# cat=Mocean; type=string; label=API Key: Your MoceanSMS API key. Can be found at https://dashboard.moceanapi.com/
+moceanApiKey =
+
+# cat=Mocean; type=string; label=API Secret: Your MoceanSMS API secret. Can be found at https://dashboard.moceanapi.com/
+moceanApiSecret =
+
+# cat=Mocean; type=string; label=Message From: Sender of the SMS.
+moceanMessageFrom =
+
+# cat=Mocean; type=int+; label=Storage Page ID: Storage page ID of where the records are kept.
+moceanStoragePid = 0
+
+# cat=Mocean; type=string; label=Verify Page: URL of page with verify form.
+moceanVerifyPage = 
+
+# cat=Mocean; type=string; label=Logout Page: URL of page to redirect after forceful logout. 
+moceanLogoutPage = 
+
+# cat=Mocean; type=string; label=Unavailable Page: URL of page to redirect when SMS code could not be sent to users(low on credit etc). 
+moceanUnavailablePage = 

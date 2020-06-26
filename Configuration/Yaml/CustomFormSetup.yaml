@@ -1,0 +1,54 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          10: EXT:mocean_sms_login/Resources/Private/Forms/
+        allowSaveToExtensionPaths: true
+        allowDeleteFromExtensionPaths: true
+
+      prototypes:
+        optinform:
+          __inheritances:
+            10: 'TYPO3.CMS.Form.prototypes.standard'
+          validatorsDefinition:
+            VerifyEnabled:
+              implementationClassName: 'Mocean\MoceanSmsLogin\Domain\Validation\VerifyEnabled'
+              properties:
+                options:
+                  value: '{checkbox-1}'
+            VerifyCode:
+              implementationClassName: 'Mocean\MoceanSmsLogin\Domain\Validation\VerifyCode'
+              properties:
+                options:
+                  value: '{pin}'
+          finishersDefinition:
+            SaveOptIn:
+              implementationClassName: 'Mocean\MoceanSmsLogin\Domain\Finishers\SaveOptIn'
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  100: 'EXT:mocean_sms_login/Resources/Private/Templates/'
+                partialRootPaths:
+                  100: 'EXT:mocean_sms_login/Resources/Private/Partials/'
+                layoutRootPaths:
+                  100: 'EXT:mocean_sms_login/Resources/Private/Layouts/'
+        verifyForm:
+          __inheritances:
+            10: 'TYPO3.CMS.Form.prototypes.standard'
+          validatorsDefinition:
+            VerifyCode:
+              implementationClassName: 'Mocean\MoceanSmsLogin\Domain\Validation\VerifyCode'
+              properties:
+                options:
+                  value: '{pin}'
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  100: 'EXT:mocean_sms_login/Resources/Private/Templates/'
+                partialRootPaths:
+                  100: 'EXT:mocean_sms_login/Resources/Private/Partials/'
+                layoutRootPaths:
+                  100: 'EXT:mocean_sms_login/Resources/Private/Layouts/'

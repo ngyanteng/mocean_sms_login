@@ -1,0 +1,8 @@
+# Configuration/Services.yaml
+services:
+  Mocean\MoceanSmsLogin\EventListener\RedirectToVerify:
+    tags:
+      - name: event.listener
+        identifier: 'loginVerify'
+        event: TYPO3\CMS\FrontendLogin\Event\LoginConfirmedEvent
+        after: 'redirects'
